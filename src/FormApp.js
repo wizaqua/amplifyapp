@@ -11,19 +11,23 @@ export class FormApp extends Component {
     }
     handleInput({ target: { value } }) {
         this.setState({
-          value
+            value
         });
-      }
+    }
     send() {
-        console.log('send called!');
+        const { value } = this.state;
+        this.setState({
+            value: '',
+            message: value
+        });
     }
     render() {
         return (
             <div>
-              <input type="text" value={this.state.value} onChange={this.handleInput.bind(this)} />
-              <button onClick={this.send.bind(this)}>SEND</button>
-              <div>{this.state.message}</div>
-            </div>
-          );
+                <input type="text" value={this.state.value} onChange={this.handleInput.bind(this)} />
+                <button onClick={this.send.bind(this)}>SEND</button>
+                <div>{this.state.message}</div>
+            </div >
+        );
     }
 }
