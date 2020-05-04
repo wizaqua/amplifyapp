@@ -1,13 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
+import { FormApp } from './FormApp';
 import './App.css';
 
 function App() {
   return (
-    <div>
-        <input type="text" />
-        <button>SEND</button>
-      </div>
+    <FormApp/>
   );
 }
 
