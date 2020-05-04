@@ -8,12 +8,17 @@ export class FormApp extends Component {
             value: '',
             message: ''
         };
+
+        this.handleInput = this.handleInput.bind(this);
+        this.send = this.send.bind(this);
     }
+
     handleInput({ target: { value } }) {
         this.setState({
             value
         });
     }
+
     send() {
         const { value } = this.state;
         this.setState({
@@ -21,13 +26,14 @@ export class FormApp extends Component {
             message: value
         });
     }
+
     render() {
         return (
             <div>
-                <input type="text" value={this.state.value} onChange={this.handleInput.bind(this)} />
-                <button onClick={this.send.bind(this)}>SEND</button>
+                <input type="text" value={this.state.value} onChange={this.handleInput} />
+                <button onClick={this.send}>SEND</button>
                 <div>{this.state.message}</div>
-            </div >
+            </div>
         );
     }
 }
